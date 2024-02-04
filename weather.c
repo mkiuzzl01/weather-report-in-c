@@ -40,6 +40,8 @@ void takeTemperature(int period, float regularTemperature[])
         scanf("%f", &regularTemperature[day]);
     }
 }
+
+
 // Average temperature from array , Here this function
 void averageTemperature(int period, float regularTemperature[])
 {
@@ -54,6 +56,7 @@ void averageTemperature(int period, float regularTemperature[])
     float averageValue = sum / period;
     printf("Average Temperature: %.2f C\n", averageValue);
 }
+
 // Highest and Lowest temperature Calculate of array Values, Here this function
 void Max_Min_Temperature(float regularTemperature[], int period)
 {
@@ -61,10 +64,14 @@ void Max_Min_Temperature(float regularTemperature[], int period)
     float max_temperature = regularTemperature[0];
     float min_temperature = regularTemperature[0];
 
+    int max_day = 1;
+    int min_day = 1;
+
     for (int day = 1; day < period; ++day){
 
         if (max_temperature < regularTemperature[day]){
             max_temperature = regularTemperature[day];
+            max_day = day+1;
         }
     }
 
@@ -72,9 +79,19 @@ void Max_Min_Temperature(float regularTemperature[], int period)
 
         if (min_temperature > regularTemperature[day]){
             min_temperature = regularTemperature[day];
+            min_day = day+1;
         }
     }
 
-    printf("Highest Temperature: %.2f C (Day %d)\n", max_temperature);
-    printf("Lowest Temperature: %.2f C (Day %d)\n", min_temperature);
+    printf("Highest Temperature: %.2f C (Day %d)\n", max_temperature,max_day);
+    printf("Lowest Temperature: %.2f C (Day %d)\n", min_temperature,min_day);
+}
+
+// Convert temperature from Array Celsius to Fahrenheit, This function Here
+void TemperatureConvert(float regularTemperature[], int period){
+
+      for (int day = 0; day < period; ++day) {
+        regularTemperature[day] = (regularTemperature[day] * 9/5) + 32;
+      }
+      
 }
