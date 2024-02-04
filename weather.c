@@ -5,7 +5,6 @@
 // Declare There function Name And Pera_Meter
 void averageTemperature(int period, float regularTemperature[]);
 void Max_Min_Temperature(float regularTemperature[], int period);
-void TemperatureConvert(float regularTemperature[], int period);
 void DisplayTemperatureFromArray(int period, float regularTemperature[]);
 
 int main()
@@ -28,7 +27,6 @@ int main()
     // Call There are Function
     averageTemperature(period, regularTemperature);
     Max_Min_Temperature(regularTemperature, period);
-    TemperatureConvert(regularTemperature, period);
     DisplayTemperatureFromArray(period, regularTemperature);
     return 0;
 }
@@ -84,24 +82,16 @@ void Max_Min_Temperature(float regularTemperature[], int period)
     printf("Lowest Temperature: %.2f C (Day %d)\n", min_temperature, min_day);
 }
 
-// Convert temperature from Array Celsius to Fahrenheit, This function Here
-void TemperatureConvert(float regularTemperature[], int period)
-{
 
-    for (int day = 0; day < period; ++day)
-    {
-        regularTemperature[day] = (regularTemperature[day] * 9 / 5) + 32;
-    }
-}
-
-// View All Regular Day Temperature Celsius to Fahrenheit
+// View All Regular Day Temperature and Convert Celsius to Fahrenheit
 void DisplayTemperatureFromArray(int period, float regularTemperature[])
 {
-
     printf("\nDay\tTemperature (C)\tTemperature (F)\n");
 
     for (int day = 0; day < period; ++day)
     {
-        printf("%d\t%.2f\t\t\t%.2f\n", day + 1, regularTemperature[day], regularTemperature[day]);
+        printf("%d\t%.2f\t\t\t%.2f\n", day + 1, regularTemperature[day], (regularTemperature[day] * 9 / 5) + 32);
     }
 }
+
+

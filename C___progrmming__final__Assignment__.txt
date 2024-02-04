@@ -1,0 +1,13 @@
+C___progrmming__final__Assignment__for__Theory:
+ 
+
+1.At first get Some input to user and set a (regularTemperature) Array;
+2.Then Avarage value calculate in this (averageTemperature) Array;
+3.Find Maximum and Minimum value in this (Max_Min_Temperature) Array and Show That;
+4.Then Covert The Temperature Celsius to Fahrenheit in this (TemperatureConvert) Array Values;
+5.Finaly Display The Valus use (DisplayTemperatureFromArray) Function;
+
+
+
+
+Github repository link: https://github.com/mkiuzzl01/weather-report-in-c
