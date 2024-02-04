@@ -16,6 +16,7 @@ int main()
 
     printf("Enter Your Period Like:(a month, two months, 3 months): ");
     scanf("%d", &period);
+    printf("The Temperature readings of %d Days View Here:\n", period);
 
     // Check user input is valid, Here this condition
     if (period <= 0 || period > maxPeriod)
@@ -57,6 +58,7 @@ void Max_Min_Temperature(float regularTemperature[], int period)
     int max_day = 1;
     int min_day = 1;
 
+    // Find The Largest value use loop
     for (int day = 1; day < period; ++day)
     {
 
@@ -67,6 +69,7 @@ void Max_Min_Temperature(float regularTemperature[], int period)
         }
     }
 
+    // Find The Smallest value use loop
     for (int day = 1; day < period; ++day)
     {
 
@@ -88,9 +91,7 @@ void TemperatureConvert(float regularTemperature[], int period)
     for (int day = 0; day < period; ++day)
     {
         regularTemperature[day] = (regularTemperature[day] * 9 / 5) + 32;
-        
     }
-
 }
 
 // View All Regular Day Temperature Celsius to Fahrenheit
@@ -101,6 +102,6 @@ void DisplayTemperatureFromArray(int period, float regularTemperature[])
 
     for (int day = 0; day < period; ++day)
     {
-        printf("%d\t%.2f\t\t%.2f\n", day + 1, regularTemperature[day], regularTemperature[day]);
+        printf("%d\t%.2f\t\t\t%.2f\n", day + 1, regularTemperature[day], regularTemperature[day]);
     }
 }
