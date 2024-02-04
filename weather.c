@@ -6,6 +6,8 @@
 void takeTemperature(int period, float regularTemperature[]);
 void averageTemperature(int period, float regularTemperature[]);
 void Max_Min_Temperature(float regularTemperature[], int period);
+void TemperatureConvert(float regularTemperature[], int period);
+void DisplayTemperatureFromArray(int period, float regularTemperature[]);
 
 int main()
 {
@@ -26,6 +28,8 @@ int main()
     takeTemperature(period, regularTemperature);
     averageTemperature(period, regularTemperature);
     Max_Min_Temperature(regularTemperature,period);
+    TemperatureConvert(regularTemperature,period);
+    DisplayTemperatureFromArray(period,regularTemperature);
     return 0;
 }
 
@@ -93,5 +97,16 @@ void TemperatureConvert(float regularTemperature[], int period){
       for (int day = 0; day < period; ++day) {
         regularTemperature[day] = (regularTemperature[day] * 9/5) + 32;
       }
-      
+
+}
+
+// View All Regular Day Temperature Celsius to Fahrenheit
+void DisplayTemperatureFromArray(int period, float regularTemperature[]){
+
+      printf("\nDay\tTemperature (C)\tTemperature (F)\n");
+
+    for (int day = 0; day < period; ++day) {
+        printf("%d\t%.2f\t\t%.2f\n", day + 1, (regularTemperature[day] - 32) * 5/9, regularTemperature[day]);
+    }
+
 }
